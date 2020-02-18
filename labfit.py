@@ -1,4 +1,6 @@
 # Author: Ben Champion <bwc3252@rit.edu>
+# Feel free to contact me if you have questions and/or something is horribly
+# broken.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -101,7 +103,6 @@ if __name__ == "__main__":
     print("\tb = {0:.3f}".format(b))
     
     # generate some data
-    # make the actual errors a bit smaller than the uncertainties
     x = np.linspace(llim, rlim, n)
     y = g(x, a, b) + np.random.normal(0.0, sigma_y, n)
     x += np.random.normal(0.0, sigma_x, n)
@@ -117,7 +118,7 @@ if __name__ == "__main__":
 
     # plot and print the results of this fit
     plt.plot(xplot, g(xplot, *params), label="Using $\sigma_x$ and $\sigma_y$")
-    print("our results:")
+    print("\nour results:")
     print("\ta = {0:.3f} +/- {1:.3f}".format(params[0], std_dev[0]))
     print("\tb = {0:.3f} +/- {1:.3f}".format(params[1], std_dev[1]))
 
