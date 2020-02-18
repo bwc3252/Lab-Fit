@@ -3,13 +3,12 @@
 # broken.
 
 import numpy as np
-import matplotlib.pyplot as plt
 import scipy.optimize as opt
 
 def _sq_md(xdata, ydata, px, py, xerr, yerr):
     # Squared Mahalanobis distances between (xdata, ydata) and (px, py).
     # This is essentially a way of measuring distances between points that
-    # accounts for the relative uncertainties.
+    # accounts for uncertainties in each direction.
     return ((xdata - px) / xerr)**2 + ((ydata - py) / yerr)**2
 
 def _residuals(f, xdata, ydata, xerr, yerr, params):

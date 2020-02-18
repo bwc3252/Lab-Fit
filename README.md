@@ -2,13 +2,15 @@
 
 ## Usage
 
-You have two options:
+To run a simple test, run the `labfit.py` file.
+
+To fit using your own model and data, you have two options:
 - put the file (`labfit.py`) in the same directory as your code and add `from labfit import fit` to your code
 - put the imports and the top three functions in `labfit.py` (`_sq_md()`, `_residuals()`, and `fit()`) directly in your code
 
 I might make this pip-installable at some point, but not yet.
 
-With the proper code imported/pasted, simply call `fit()` the same way you call
+With the proper code imported/copy-pasted, call `fit()` the same way you call
 `scipy.optimize.curve_fit()`. The only difference is that you can specify an
 `xerr` parameter. Note that you don't need to include `xerr` -- if you don't,
 `fit()` will simply return the same result as `curve_fit()`. However, if you
@@ -24,7 +26,7 @@ some other optimization code to find the model parameters that minimize this
 distance.
 
 However, we don't have a direct way to calculate the points on the curve to use
-to calculate this distances. There are special cases, such as linear models,
+when calculating these distances. There are special cases, such as linear models,
 where there is an analytic solution for this, but since the goal is to fit any
 model, we can't use this.
 
